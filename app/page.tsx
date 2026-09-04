@@ -6,6 +6,9 @@ import SunMark from "@/components/SunMark";
 import ProductMark from "@/components/ProductMark";
 import StatusBadge from "@/components/StatusBadge";
 import FeatureGrid from "@/components/FeatureGrid";
+import FizgotPreview from "@/components/previews/FizgotPreview";
+import ExportAIChatPreview from "@/components/previews/ExportAIChatPreview";
+import AgentsPreview from "@/components/previews/AgentsPreview";
 import { PRODUCTS, VALUES, SITE, getProduct, productHref, type Product } from "@/lib/site";
 
 const ORBIT_DELAYS = ["0s", "0.6s", "1.2s"];
@@ -13,63 +16,6 @@ const ORBIT_DELAYS = ["0s", "0.6s", "1.2s"];
 const fizgot = getProduct("fizgot");
 const exportAiChat = getProduct("exportaichat");
 const agents = getProduct("agents");
-
-function BrowserChrome({ host }: { host: string }) {
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: 8,
-        padding: "11px 14px",
-        borderBottom: "1px solid #f0e8da",
-        background: "#faf5ec",
-      }}
-    >
-      {["#e8a34a", "#e8d04a", "#d97a3f"].map((c) => (
-        <span key={c} style={{ width: 10, height: 10, borderRadius: "50%", background: c }} />
-      ))}
-      <span
-        style={{
-          fontFamily: "var(--font-mono)",
-          fontSize: 12,
-          color: "var(--sy-faint)",
-          marginLeft: 8,
-        }}
-      >
-        {host}
-      </span>
-    </div>
-  );
-}
-
-function ScreenshotPlaceholder({ label }: { label: string }) {
-  return (
-    <div
-      style={{
-        height: 300,
-        background:
-          "repeating-linear-gradient(45deg,#f4ead9,#f4ead9 11px,#efe3cf 11px,#efe3cf 22px)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <span
-        style={{
-          fontFamily: "var(--font-mono)",
-          fontSize: 13,
-          color: "#9a8f7d",
-          background: "rgba(255,255,255,0.7)",
-          padding: "8px 14px",
-          borderRadius: 8,
-        }}
-      >
-        {label}
-      </span>
-    </div>
-  );
-}
 
 function Bullet({ color, children }: { color: string; children: React.ReactNode }) {
   return (
@@ -392,8 +338,7 @@ export default function Home() {
             </div>
           </div>
           <div style={frame}>
-            <BrowserChrome host="fizgot.com" />
-            <ScreenshotPlaceholder label="Fizgot — drop product screenshot" />
+            <FizgotPreview />
           </div>
         </div>
       </div>
@@ -412,8 +357,7 @@ export default function Home() {
             style={{ display: "grid", gridTemplateColumns: "1.08fr 0.92fr", gap: 60, alignItems: "center" }}
           >
             <div style={{ ...frame, border: "1px solid var(--sy-border-strong)" }}>
-              <BrowserChrome host="exportaichat.com" />
-              <ScreenshotPlaceholder label="ExportAIChat — drop product screenshot" />
+              <ExportAIChatPreview />
             </div>
             <div>
               <SpotlightLabel product={exportAiChat} />
@@ -455,61 +399,7 @@ export default function Home() {
             </div>
           </div>
           <div style={frame}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                padding: "13px 16px",
-                borderBottom: "1px solid #f0e8da",
-                background: "#faf5ec",
-              }}
-            >
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "12.5px", color: "var(--sy-faint)" }}>
-                atlas-1 · equities
-              </span>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "#2e7d4f" }}>
-                ● running
-              </span>
-            </div>
-            <div style={{ padding: 24 }}>
-              <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 2 }}>
-                <span style={{ fontSize: "12.5px", color: "var(--sy-faint)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                  P&amp;L · today
-                </span>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "#2e7d4f" }}>
-                  +2.41%
-                </span>
-              </div>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 34, color: "var(--sy-ink)", letterSpacing: "-0.02em" }}>
-                $24,830
-              </div>
-              <svg viewBox="0 0 420 120" style={{ width: "100%", height: 110, marginTop: 6, display: "block" }} aria-hidden>
-                <defs>
-                  <linearGradient id="syArea2" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="rgba(226,99,42,0.22)" />
-                    <stop offset="100%" stopColor="rgba(226,99,42,0)" />
-                  </linearGradient>
-                </defs>
-                <polygon
-                  points="0,98 35,90 70,94 105,76 140,82 175,60 210,68 245,46 280,54 315,32 350,38 385,18 420,12 420,120 0,120"
-                  fill="url(#syArea2)"
-                />
-                <polyline
-                  points="0,98 35,90 70,94 105,76 140,82 175,60 210,68 245,46 280,54 315,32 350,38 385,18 420,12"
-                  fill="none"
-                  stroke="#e2632a"
-                  strokeWidth="2.4"
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <div style={{ display: "flex", justifyContent: "space-between", marginTop: 8, paddingTop: 14, borderTop: "1px solid #f0e8da", fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--sy-faint)" }}>
-                <span>Sharpe <span style={{ color: "var(--sy-ink)" }}>2.7</span></span>
-                <span>Win <span style={{ color: "var(--sy-ink)" }}>61%</span></span>
-                <span>Max DD <span style={{ color: "var(--sy-ink)" }}>4.1%</span></span>
-              </div>
-            </div>
+            <AgentsPreview />
           </div>
         </div>
       </div>
@@ -585,7 +475,7 @@ export default function Home() {
             <Link href="/contact" className="sy-btn sy-btn-primary sy-btn-lg">
               Get in touch <span>→</span>
             </Link>
-            <Link href="/contact" className="sy-btn sy-btn-ghost sy-btn-lg">
+            <Link href="/careers" className="sy-btn sy-btn-ghost sy-btn-lg">
               See careers
             </Link>
           </div>

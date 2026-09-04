@@ -43,6 +43,7 @@ export default function PrivacyPage() {
       title="Privacy Policy"
       intro={`This policy explains what information Suryca Software Inc. ("Suryca", "we") collects, how we use it, and the choices you have. It applies to our website and products.`}
       sections={SECTIONS}
+      updated="September 2026"
     />
   );
 }

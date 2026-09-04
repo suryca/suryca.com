@@ -43,6 +43,7 @@ export default function TermsPage() {
       title="Terms of Service"
       intro="These terms govern your use of Suryca Software Inc.'s website and products, including Fizgot, ExportAIChat, and Suryca Agents. By using them, you agree to what's below."
       sections={SECTIONS}
+      updated="September 2026"
     />
   );
 }

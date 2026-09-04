@@ -23,11 +23,7 @@ export default function Nav({ active }: { active?: NavKey }) {
             ))}
           </div>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-          {/* TODO: point at the real sign-in once accounts exist. */}
-          <Link href="/contact" className="sy-navlink" style={{ fontSize: "14.5px" }}>
-            Sign in
-          </Link>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <Link href="/contact" className="sy-btn sy-btn-primary sy-btn-sm">
             Get in touch <span style={{ fontSize: 15 }}>→</span>
           </Link>

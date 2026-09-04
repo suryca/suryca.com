@@ -5,7 +5,8 @@ Guidance for Claude Code when working in this repository.
 ## What this is
 
 The public website for Suryca Software Inc. (suryca.com), an AI software studio with three
-products: Fizgot, ExportAIChat and Suryca Agents. Static marketing pages only, no backend.
+products: Fizgot, ExportAIChat and Suryca Agents. Static marketing pages plus one API route
+for the contact form. Hosted on Cloudflare Workers (free plan) through OpenNext.
 
 ## Stack
 
@@ -16,28 +17,38 @@ products: Fizgot, ExportAIChat and Suryca Agents. Static marketing pages only, n
 - Fonts via `next/font/google`: Space Grotesk (display), Hanken Grotesk (body),
   IBM Plex Mono (mono). Use `var(--font-display|body|mono)`, never hard-code family names.
 - Path alias `@/` maps to the repo root (`@/components/...`, `@/lib/...`).
+- ESLint 9 flat config in `eslint.config.mjs` (next/core-web-vitals + next/typescript).
 
 ## Commands
 
 ```bash
-npm run dev      # local dev server
-npm run build    # production build; run this before committing, it is the type-check
+npm run dev        # local dev server on http://localhost:3000
+npm run lint       # eslint .
+npm run build      # next build; run before committing, it is the type-check
+npm run preview    # OpenNext build + wrangler dev (the real worker, locally)
+npm run deploy     # OpenNext build + wrangler deploy (needs `npx wrangler login`)
 ```
 
-There is no test suite and no ESLint config yet (`npm run lint` will prompt to install one).
+There is no test suite.
 
 ## Where things live
 
 - `lib/site.ts` is the single source of truth for brand name, product list (slug, name,
-  status, gradient, accent, blurb), nav links, footer columns and contact emails.
-  Add or change a product there, not in individual pages.
+  status, gradient, accent, blurb), nav links, footer columns, contact emails and contact
+  form topics. Add or change a product there, not in individual pages.
 - `components/PageShell.tsx` wraps every non-home page with Nav + Footer and exports
   `PageHeader` (eyebrow, title, intro).
 - `components/ProductPage.tsx` is the template for product pages; product routes only
   supply intro copy, features and CTA text.
-- `components/LegalPage.tsx` renders Privacy and Terms from a sections array.
+- `components/LegalPage.tsx` renders Privacy and Terms from a sections array and an
+  `updated` date string. Bump the date when legal copy changes.
+- `components/previews/` holds the illustrative product UIs on the home page. They are
+  pure JSX drawings, not screenshots.
 - `app/page.tsx` (home) is the one page with bespoke layout; it still reads products and
   values from `lib/site.ts`.
+- `app/api/contact/route.ts` validates the form, drops honeypot hits, and sends via the
+  Resend REST API with plain `fetch` (no SDK). Env: `RESEND_API_KEY` (secret),
+  `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`. Missing config logs in dev, returns 503 in prod.
 - `design/` holds the original mockups (`*.dc.html` + `support.js`, plus a self-contained
   `suryca-standalone.html`). Open them in a browser for visual reference. They are not
   imported by the app and must not be bundled.
@@ -54,14 +65,18 @@ There is no test suite and no ESLint config yet (`npm run lint` will prompt to i
 - Small, targeted changes. Do not introduce Tailwind, CSS modules or a component library
   without discussing it first.
 
-## Known placeholders (do not "fix" silently)
+## Deploy (Cloudflare Workers, free plan)
 
-- Contact form only sets local state; no submission backend.
-- Nav "Sign in" and home "See careers" link to `/contact`.
-- Home page product screenshots are placeholders.
-- Legal pages include a "review by counsel" note.
+- `wrangler.jsonc` names the worker `suryca-com`; the dashboard project name must match.
+- Dashboard build command `npx opennextjs-cloudflare build`, deploy command
+  `npx opennextjs-cloudflare deploy`. Plain `npm run build` alone is not deployable.
+- Free plan limits: 3 MiB compressed worker, 10 ms CPU per request, 100k requests/day.
+  Keep pages statically prerendered (no `dynamic = "force-dynamic"` on pages, no ISR) so
+  the worker stays small and only `/api/contact` executes on request.
+- Secrets go in the dashboard or `npx wrangler secret put`; never in `wrangler.jsonc`.
+- `.open-next/` and `.wrangler/` are build output and are git-ignored.
 
-## Deploy
+## Content notes
 
-Intended for Vercel with the repo root as the project root. No environment variables are
-required today.
+- Blog and news items are static sample content.
+- Nav has no "Sign in": the site has no accounts. Do not add one without a real target.

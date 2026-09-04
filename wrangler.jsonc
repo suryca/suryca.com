@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Must match the Worker/project name chosen in the Cloudflare dashboard.
+  "name": "suryca-com",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-08-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // Lets the worker call itself (used by OpenNext for revalidation/cache work).
+  "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "suryca-com" }],
+  "observability": { "enabled": true },
+  // Non-secret config. RESEND_API_KEY is a secret: set it in the dashboard
+  // (Settings → Variables and Secrets) or with `npx wrangler secret put RESEND_API_KEY`.
+  "vars": {
+    "CONTACT_TO_EMAIL": "hello@suryca.com",
+    "CONTACT_FROM_EMAIL": "Suryca <hello@suryca.com>"
+  }
+}

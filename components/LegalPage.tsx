@@ -6,15 +6,28 @@ export default function LegalPage({
   title,
   intro,
   sections,
+  updated,
 }: {
   title: string;
   intro: string;
   sections: LegalSection[];
+  /** Human-readable date the text was last revised, e.g. "September 2026". */
+  updated: string;
 }) {
   return (
     <PageShell>
       <PageHeader eyebrow="Legal" title={title} intro={intro} />
       <div className="sy-wrap" style={{ padding: "32px 32px 88px", maxWidth: 820 }}>
+        <p
+          style={{
+            margin: "0 0 30px",
+            fontFamily: "var(--font-mono)",
+            fontSize: 13,
+            color: "var(--sy-faint)",
+          }}
+        >
+          Last updated: {updated}
+        </p>
         <div style={{ display: "flex", flexDirection: "column", gap: 30 }}>
           {sections.map((s) => (
             <section key={s.heading}>
@@ -35,18 +48,6 @@ export default function LegalPage({
             </section>
           ))}
         </div>
-
-        <p
-          style={{
-            marginTop: 40,
-            fontFamily: "var(--font-mono)",
-            fontSize: 13,
-            color: "var(--sy-faint)",
-          }}
-        >
-          This is a design implementation. Final legal text should be reviewed by counsel
-          before publication.
-        </p>
       </div>
     </PageShell>
   );

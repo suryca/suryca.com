@@ -118,6 +118,7 @@ export const FOOTER_COLUMNS: { title: string; links: { label: string; href: stri
       { label: "About", href: "/about" },
       { label: "Blog", href: "/blog" },
       { label: "News", href: "/news" },
+      { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -136,3 +137,7 @@ export const CONTACT_CHANNELS = [
   { label: "Careers", value: "join@suryca.com" },
   { label: "Security", value: "security@suryca.com" },
 ];
+
+/** Options for the "What's this about?" select on the contact form. */
+export const CONTACT_TOPICS = ["Product", "Partnership", "Careers", "Press", "Other"] as const;
+export type ContactTopic = (typeof CONTACT_TOPICS)[number];
