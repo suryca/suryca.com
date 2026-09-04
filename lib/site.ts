@@ -1,25 +1,23 @@
 /**
- * Single source of truth for site-wide content: brand, products, navigation,
- * footer columns and contact channels. Pages and components import from here
- * so copy and colours are never duplicated.
+ * Single source of truth for site-wide structure: brand, products, navigation,
+ * footer columns and contact channels. Translatable copy lives in
+ * messages/<locale>.json; this file holds routes, keys, colours and emails.
  */
 
 export const SITE = {
   name: "Suryca",
   legalName: "Suryca Software Inc.",
   url: "https://suryca.com",
-  tagline: "An AI software studio",
-  description:
-    "Suryca designs and ships practical AI software — creative tools, everyday utilities, and autonomous agents. Named for surya, the sun: always on, always shipping.",
-  footerBlurb:
-    "Suryca Software Inc. An independent AI software studio. Always on, like the sun.",
 } as const;
 
 export type ProductStatus = "LIVE" | "BETA";
 
+export type ProductSlug = "fizgot" | "exportaichat" | "agents";
+
 export type Product = {
-  /** Route segment, e.g. "fizgot" → /fizgot */
-  slug: string;
+  /** Route segment and message key, e.g. "fizgot" → /fizgot, Products.fizgot.* */
+  slug: ProductSlug;
+  /** Brand name, not translated. */
   name: string;
   status: ProductStatus;
   /** Gradient used for the product's square brand mark. */
@@ -28,7 +26,6 @@ export type Product = {
   shadow: string;
   /** Solid accent colour for bullets and status text. */
   accent: string;
-  blurb: string;
 };
 
 export const PRODUCTS: Product[] = [
@@ -39,8 +36,6 @@ export const PRODUCTS: Product[] = [
     gradient: "linear-gradient(150deg,#ff8a4c,#e2632a)",
     shadow: "0 8px 18px -6px rgba(226,99,42,0.5)",
     accent: "#e2632a",
-    blurb:
-      "A playful AI creation tool for makers — turn a quick idea into something shareable in minutes.",
   },
   {
     slug: "exportaichat",
@@ -49,8 +44,6 @@ export const PRODUCTS: Product[] = [
     gradient: "linear-gradient(150deg,#f7c85a,#d99211)",
     shadow: "0 8px 18px -6px rgba(217,146,17,0.5)",
     accent: "#d99211",
-    blurb:
-      "Save, organize and share your AI conversations — clean exports to PDF, Markdown and the web.",
   },
   {
     slug: "agents",
@@ -59,8 +52,6 @@ export const PRODUCTS: Product[] = [
     gradient: "linear-gradient(150deg,#d96a3f,#b4471f)",
     shadow: "0 8px 18px -6px rgba(180,71,31,0.5)",
     accent: "#b4471f",
-    blurb:
-      "Autonomous agents that do real work — starting with a financial trading agent that runs around the clock.",
   },
 ];
 
@@ -68,76 +59,77 @@ export function productHref(p: Product): string {
   return `/${p.slug}`;
 }
 
-export function getProduct(slug: string): Product {
+export function getProduct(slug: ProductSlug): Product {
   const p = PRODUCTS.find((x) => x.slug === slug);
   if (!p) throw new Error(`Unknown product slug: ${slug}`);
   return p;
 }
 
-export const STATUS_STYLE: Record<
-  ProductStatus,
-  { label: string; color: string; background: string }
-> = {
-  LIVE: { label: "Live", color: "#2e7d4f", background: "rgba(46,125,79,0.1)" },
-  BETA: { label: "Beta", color: "#b4471f", background: "rgba(180,71,31,0.1)" },
+/** Status colours. Labels come from the Status.* messages. */
+export const STATUS_STYLE: Record<ProductStatus, { color: string; background: string }> = {
+  LIVE: { color: "#2e7d4f", background: "rgba(46,125,79,0.1)" },
+  BETA: { color: "#b4471f", background: "rgba(180,71,31,0.1)" },
 };
 
-/** "How we build" / company values. Shared by the home and about pages. */
-export const VALUES = [
-  {
-    title: "AI-native",
-    body: "Every product is built around what AI does well today — not bolted on as an afterthought.",
-  },
-  {
-    title: "Human-centered",
-    body: "Powerful underneath, simple on the surface. Software should feel calm, not clever.",
-  },
-  {
-    title: "Independent & fast",
-    body: "No committees. Ideas ship in days, and the people who build also decide.",
-  },
-];
+/** Company values ("How we build"). Message keys under Values.*; shared by home, about and careers. */
+export const VALUE_KEYS = ["aiNative", "humanCentered", "independent"] as const;
 
 export type NavKey = "products" | "blog" | "news" | "contact";
 
-export const NAV_LINKS: { key: NavKey; label: string; href: string }[] = [
-  { key: "products", label: "Products", href: "/#products" },
-  { key: "blog", label: "Blog", href: "/blog" },
-  { key: "news", label: "News", href: "/news" },
-  { key: "contact", label: "Contact", href: "/contact" },
+/** Top navigation. Labels come from the Nav.* messages. */
+export const NAV_LINKS: { key: NavKey; href: { pathname: string; hash?: string } }[] = [
+  { key: "products", href: { pathname: "/", hash: "products" } },
+  { key: "blog", href: { pathname: "/blog" } },
+  { key: "news", href: { pathname: "/news" } },
+  { key: "contact", href: { pathname: "/contact" } },
 ];
 
-export const FOOTER_COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
+export type FooterLinkKey =
+  | "about"
+  | "blog"
+  | "news"
+  | "careers"
+  | "contact"
+  | "privacy"
+  | "terms"
+  | "security";
+
+/** Footer columns. `title` and link `key`s are Footer.* message keys; product links use the brand name. */
+export const FOOTER_COLUMNS: {
+  title: "products" | "company" | "legal";
+  links: ({ key: FooterLinkKey; href: string } | { product: Product })[];
+}[] = [
+  { title: "products", links: PRODUCTS.map((product) => ({ product })) },
   {
-    title: "Products",
-    links: PRODUCTS.map((p) => ({ label: p.name, href: productHref(p) })),
-  },
-  {
-    title: "Company",
+    title: "company",
     links: [
-      { label: "About", href: "/about" },
-      { label: "Blog", href: "/blog" },
-      { label: "News", href: "/news" },
-      { label: "Careers", href: "/careers" },
-      { label: "Contact", href: "/contact" },
+      { key: "about", href: "/about" },
+      { key: "blog", href: "/blog" },
+      { key: "news", href: "/news" },
+      { key: "careers", href: "/careers" },
+      { key: "contact", href: "/contact" },
     ],
   },
   {
-    title: "Legal",
+    title: "legal",
     links: [
-      { label: "Privacy", href: "/privacy" },
-      { label: "Terms", href: "/terms" },
-      { label: "Security", href: "/security" },
+      { key: "privacy", href: "/privacy" },
+      { key: "terms", href: "/terms" },
+      { key: "security", href: "/security" },
     ],
   },
 ];
 
+/** Contact mailboxes. `key` is a Contact.channels.* message key. */
 export const CONTACT_CHANNELS = [
-  { label: "General", value: "hello@suryca.com" },
-  { label: "Careers", value: "join@suryca.com" },
-  { label: "Security", value: "security@suryca.com" },
-];
+  { key: "general", value: "hello@suryca.com" },
+  { key: "careers", value: "join@suryca.com" },
+  { key: "security", value: "security@suryca.com" },
+] as const;
 
-/** Options for the "What's this about?" select on the contact form. */
+/**
+ * Options for the "What's this about?" select on the contact form. These are the
+ * submitted values (and the email subject); display labels are ContactForm.topics.*.
+ */
 export const CONTACT_TOPICS = ["Product", "Partnership", "Careers", "Press", "Other"] as const;
 export type ContactTopic = (typeof CONTACT_TOPICS)[number];

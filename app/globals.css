@@ -25,9 +25,11 @@
   --sy-hero-glow: radial-gradient(58% 64% at 50% 0%, rgba(242,169,59,0.28), rgba(226,99,42,0.12) 46%, transparent 72%);
 
   /* Fonts (loaded via next/font) */
-  --font-display: var(--font-space-grotesk), sans-serif;
-  --font-body: var(--font-hanken-grotesk), -apple-system, sans-serif;
-  --font-mono: var(--font-ibm-plex-mono), monospace;
+  /* Noto Sans Devanagari is scoped to Devanagari code points by next/font, so it
+     only kicks in (and only downloads) when a page contains Hindi text. */
+  --font-display: var(--font-space-grotesk), var(--font-noto-devanagari), sans-serif;
+  --font-body: var(--font-hanken-grotesk), var(--font-noto-devanagari), -apple-system, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), var(--font-noto-devanagari), monospace;
 }
 
 * { box-sizing: border-box; }
@@ -236,4 +238,14 @@ a {
   .sy-hero-h1 {
     font-size: 38px !important;
   }
+}
+
+/* Devanagari needs room for vowel marks above and below the line, and
+   the tight tracking used for Latin headings breaks its conjuncts. Inline
+   styles set those values, so these overrides need !important. */
+html[lang="hi"] h1,
+html[lang="hi"] h2,
+html[lang="hi"] h3 {
+  letter-spacing: 0 !important;
+  line-height: 1.28 !important;
 }

@@ -1,6 +1,8 @@
+import { useTranslations } from "next-intl";
 import { STATUS_STYLE, type ProductStatus } from "@/lib/site";
 
 export default function StatusBadge({ status }: { status: ProductStatus }) {
+  const t = useTranslations("Status");
   const s = STATUS_STYLE[status];
   return (
     <span
@@ -12,9 +14,10 @@ export default function StatusBadge({ status }: { status: ProductStatus }) {
         padding: "4px 9px",
         borderRadius: 6,
         letterSpacing: "0.04em",
+        textTransform: "uppercase",
       }}
     >
-      {status}
+      {t(status)}
     </span>
   );
 }

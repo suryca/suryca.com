@@ -1,0 +1,289 @@
+{
+  "Common": {
+    "getInTouch": "Get in touch",
+    "seeCareers": "See careers",
+    "emailUs": "Email us",
+    "brandHome": "Suryca home"
+  },
+  "Meta": {
+    "siteTitle": "Suryca — An AI software studio",
+    "siteDescription": "Suryca designs and ships practical AI software — creative tools, everyday utilities, and autonomous agents. Named for surya, the sun: always on, always shipping."
+  },
+  "Nav": {
+    "products": "Products",
+    "blog": "Blog",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "Footer": {
+    "blurb": "Suryca Software Inc. An independent AI software studio. Always on, like the sun.",
+    "products": "Products",
+    "company": "Company",
+    "legal": "Legal",
+    "about": "About",
+    "blog": "Blog",
+    "news": "News",
+    "careers": "Careers",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "security": "Security",
+    "madeWith": "Made with care, under the sun."
+  },
+  "Language": {
+    "label": "Language",
+    "en": "English",
+    "hi": "हिन्दी"
+  },
+  "Status": {
+    "LIVE": "Live",
+    "BETA": "Beta"
+  },
+  "Products": {
+    "fizgot": {
+      "blurb": "A playful AI creation tool for makers — turn a quick idea into something shareable in minutes.",
+      "description": "A playful AI creation tool for makers. Describe an idea and watch it become something real and shareable — in minutes."
+    },
+    "exportaichat": {
+      "blurb": "Save, organize and share your AI conversations — clean exports to PDF, Markdown and the web.",
+      "description": "Save, organize and share your AI conversations in clean formats — so nothing useful gets lost in a scroll-back."
+    },
+    "agents": {
+      "blurb": "Autonomous agents that do real work — starting with a financial trading agent that runs around the clock.",
+      "description": "Autonomous software that does real work. Our first agent trades financial markets within hard limits you set, around the clock."
+    }
+  },
+  "Values": {
+    "aiNative": {
+      "title": "AI-native",
+      "body": "Every product is built around what AI does well today — not bolted on as an afterthought."
+    },
+    "humanCentered": {
+      "title": "Human-centered",
+      "body": "Powerful underneath, simple on the surface. Software should feel calm, not clever."
+    },
+    "independent": {
+      "title": "Independent & fast",
+      "body": "No committees. Ideas ship in days, and the people who build also decide."
+    }
+  },
+  "Home": {
+    "badge": "surya ka — of the sun",
+    "heroTitle": "An AI software studio<br></br>building a family of products.",
+    "heroBody": "Suryca designs and ships practical AI software — creative tools, everyday utilities, and autonomous agents. Named for <em>surya</em>, the sun: always on, always shipping.",
+    "seeProducts": "See our products",
+    "moreSoon": "More soon",
+    "whatWeMake": "What we make",
+    "productsTitle": "One studio, many products.",
+    "productsBody": "Each product stands on its own, but they share a spine: thoughtful design and AI that quietly does the work.",
+    "explore": "Explore {name}",
+    "fizgot": {
+      "title": "Make something delightful, fast.",
+      "body": "Fizgot turns a sentence into a finished little thing — no blank canvas, no friction. Built for the moments when an idea should just become real.",
+      "bullet1": "Idea-to-output in under a minute",
+      "bullet2": "Share anywhere with one link"
+    },
+    "exportaichat": {
+      "title": "Your AI chats, worth keeping.",
+      "body": "Conversations with AI are real work. ExportAIChat captures them in clean, shareable formats so nothing useful gets lost in a scroll-back.",
+      "bullet1": "Export to PDF, Markdown & web",
+      "bullet2": "Organize, search and revisit"
+    },
+    "agents": {
+      "title": "Software that does the work, not just the talking.",
+      "body": "Our first agent is a financial trading agent: it researches markets, manages risk, and executes within limits you set — around the clock, with a full audit trail.",
+      "bullet1": "Runs 24/7 within hard risk limits",
+      "bullet2": "Every decision logged and reversible"
+    },
+    "howWeBuild": "How we build",
+    "approachTitle": "Small studio. High standards.",
+    "studioTitle": "Today a one-person studio. Soon, a team of people and agents shipping together.",
+    "studioBody": "Suryca began as an independent studio and is incorporating as Suryca Software Inc. The plan is simple: keep shipping useful products, and let our own agents help us build them.",
+    "ctaTitle": "Let’s build something useful.",
+    "ctaBody": "Want to try a product, partner up, or join the studio? We’d love to hear from you."
+  },
+  "ProductPage": {
+    "fizgot": {
+      "intro": "A playful AI creation tool for makers. Describe an idea and watch it become something real and shareable — in minutes, not afternoons.",
+      "features": [
+        { "title": "Start from a sentence", "body": "No blank canvas. Type what you want and Fizgot drafts a first version you can shape from there." },
+        { "title": "Shape it live", "body": "Nudge, remix and refine with simple controls. Every change is instant, every step reversible." },
+        { "title": "Share in one click", "body": "Publish to a link, export, or hand it off. What you make is yours to take anywhere." }
+      ],
+      "cta": {
+        "title": "Make your first thing today.",
+        "body": "Fizgot is free to try. Bring an idea, leave with something real."
+      }
+    },
+    "exportaichat": {
+      "intro": "Your conversations with AI are real work. ExportAIChat saves, organizes and shares them in clean formats — so nothing useful gets lost in a scroll-back.",
+      "features": [
+        { "title": "Capture every chat", "body": "One click pulls a full conversation — prompts, replies, code and all — into a tidy document." },
+        { "title": "Organize & search", "body": "Tag, fold into collections and search across everything you’ve ever asked an AI." },
+        { "title": "Share cleanly", "body": "Send a polished link or file — formatted, readable, and free of UI clutter." }
+      ],
+      "cta": {
+        "title": "Keep what you learn.",
+        "body": "Add ExportAIChat to your browser and never lose a good conversation again."
+      }
+    },
+    "agents": {
+      "intro": "Autonomous software that does real work. Our first agent trades financial markets — researching, managing risk, and executing within limits you set, around the clock.",
+      "features": [
+        { "title": "Hard risk limits", "body": "VaR, drawdown and exposure ceilings enforced before any order — never as an afterthought." },
+        { "title": "Instant kill-switch", "body": "Flatten any agent or the whole fleet in one click, from anywhere." },
+        { "title": "Full audit trail", "body": "Every decision, signal and fill is timestamped and replayable." },
+        { "title": "Paper → live", "body": "Backtest and paper-trade first; promote to live with a single flag when you’re ready." }
+      ],
+      "cta": {
+        "title": "Bring autonomy to your desk.",
+        "body": "We’re onboarding a first cohort of partners. Tell us your mandate and we’ll run an agent against it."
+      },
+      "controlTitle": "Autonomy, with the brakes you’d expect.",
+      "controlStats": "Control & trust — Sharpe 2.7 · Win 61% · Max DD 4.1%"
+    }
+  },
+  "About": {
+    "title": "About",
+    "description": "Suryca is an independent AI software studio, incorporating as Suryca Software Inc.",
+    "eyebrow": "About",
+    "heading": "Small studio. High standards.",
+    "intro": "Suryca began as an independent studio and is incorporating as Suryca Software Inc. The plan is simple: keep shipping useful products, and let our own agents help us build them.",
+    "studioTitle": "Today a one-person studio. Soon, a team of people and agents shipping together."
+  },
+  "Careers": {
+    "title": "Careers",
+    "description": "Suryca is a small AI software studio. There are no open roles right now, but we always want to hear from people who ship.",
+    "eyebrow": "Careers",
+    "heading": "No open roles right now.",
+    "intro": "Suryca is a one-person studio today, incorporating as Suryca Software Inc. We are not hiring yet, but the plan is a small team of people and agents shipping together. If that sounds like you, say hello early.",
+    "ctaTitle": "Introduce yourself.",
+    "ctaBody": "Send a short note and a link to something you built to {email}."
+  },
+  "Blog": {
+    "title": "Blog",
+    "description": "Notes from the studio.",
+    "eyebrow": "Blog",
+    "heading": "Notes from the studio.",
+    "intro": "Essays on building products, designing with care, and working alongside agents.",
+    "featured": "Featured",
+    "featuredTitle": "Building a company where people and agents ship together",
+    "featuredBlurb": "How we’re structuring Suryca so that human makers and autonomous agents do real work side by side.",
+    "posts": [
+      "How we put hard limits around an autonomous trader",
+      "Why Fizgot starts from a sentence, not a blank canvas",
+      "Designing clean exports for messy AI chats",
+      "What one person can ship in 2026",
+      "Backtesting honestly: avoiding the lies we tell ourselves",
+      "A warm palette for a company named after the sun"
+    ],
+    "read": "Read →"
+  },
+  "News": {
+    "title": "News",
+    "description": "News and announcements from Suryca Software Inc.",
+    "eyebrow": "News",
+    "heading": "News & announcements",
+    "intro": "Milestones, launches and notes on where Suryca is headed.",
+    "items": [
+      { "tag": "Company", "title": "Suryca incorporates as Suryca Software Inc.", "blurb": "What began as an independent studio is becoming a company — same focus, more room to grow." },
+      { "tag": "Product", "title": "Suryca Agents enters private beta", "blurb": "Our first autonomous trading agent opens to a small cohort of partners." },
+      { "tag": "Product", "title": "ExportAIChat adds Markdown & public links", "blurb": "Export conversations to clean Markdown or share them with a single public link." },
+      { "tag": "Product", "title": "Fizgot launches to the public", "blurb": "The playful idea-to-output tool is now free for anyone to try." }
+    ]
+  },
+  "Security": {
+    "title": "Security",
+    "description": "How Suryca protects your data and your money — encryption, least-privilege access, and trading safeguards.",
+    "eyebrow": "Security",
+    "heading": "Security is a feature, not a footnote.",
+    "intro": "We build every Suryca product to protect your data and your money. Here’s how we think about it — and what we commit to.",
+    "practices": [
+      { "title": "Encryption everywhere", "body": "Data is encrypted in transit (TLS 1.2+) and at rest (AES-256). Secrets are stored in a managed vault, never in code." },
+      { "title": "Least-privilege access", "body": "SSO and role-based access control on every system. Access is scoped, logged, and reviewed regularly." },
+      { "title": "Hardened infrastructure", "body": "Isolated environments, automated patching, and continuous monitoring on reputable cloud providers." },
+      { "title": "Trading safeguards", "body": "For Suryca Agents: hard risk limits, instant kill-switches, and a complete, replayable audit trail." },
+      { "title": "Working toward formal compliance", "body": "As we incorporate as Suryca Software Inc., we’re building toward SOC 2 Type II. Reach out for our current security overview." }
+    ],
+    "disclosureTitle": "Responsible disclosure",
+    "disclosureBody": "Found a vulnerability? We want to hear from you. Email us with details and steps to reproduce, and we’ll acknowledge quickly and work with you on a fix. Please give us reasonable time before any public disclosure."
+  },
+  "Contact": {
+    "title": "Contact",
+    "description": "Get in touch with Suryca Software Inc.",
+    "eyebrow": "Contact",
+    "heading": "Let’s talk.",
+    "channels": {
+      "general": "General",
+      "careers": "Careers",
+      "security": "Security"
+    },
+    "studio": "Studio",
+    "studioNote": "Remote-first · building under the sun"
+  },
+  "ContactForm": {
+    "name": "Name",
+    "email": "Email",
+    "topic": "What’s this about?",
+    "topics": {
+      "Product": "Product",
+      "Partnership": "Partnership",
+      "Careers": "Careers",
+      "Press": "Press",
+      "Other": "Other"
+    },
+    "message": "Message",
+    "website": "Website",
+    "privacy": "We’ll never share your details.",
+    "send": "Send message",
+    "sending": "Sending…",
+    "sentTitle": "Thanks — message received.",
+    "sentBody": "We’ll get back to you soon.",
+    "genericError": "Something went wrong. Please try again."
+  },
+  "Legal": {
+    "eyebrow": "Legal",
+    "lastUpdated": "Last updated: {date}"
+  },
+  "Privacy": {
+    "title": "Privacy Policy",
+    "description": "How Suryca Software Inc. collects, uses and protects personal information.",
+    "intro": "This policy explains what personal information Suryca Software Inc. (“Suryca”, “we”) collects, how we use it, and the choices you have. It applies to our website and products.",
+    "updated": "September 2026",
+    "sections": [
+      { "heading": "1. Who we are", "body": "Suryca Software Inc. is a company based in British Columbia, Canada. We are responsible for the personal information described in this policy, and we handle it in line with British Columbia’s Personal Information Protection Act (PIPA) and Canada’s Personal Information Protection and Electronic Documents Act (PIPEDA). Our privacy officer can be reached at privacy@suryca.com." },
+      { "heading": "2. Information we collect", "body": "Account details you provide, such as your name and email address; messages you send us, including through the contact form; basic usage and device data needed to run and secure the products; and the content you create or import while using Fizgot, ExportAIChat and Suryca Agents." },
+      { "heading": "3. How we use information & consent", "body": "We use personal information to operate and improve the products, keep them secure, respond to you, and communicate with you about your account. We collect, use and disclose it only for purposes a reasonable person would consider appropriate, with your consent or as PIPA and PIPEDA otherwise allow. We do not sell personal information. We send marketing email only with your consent, as Canada’s anti-spam legislation (CASL) requires, and you can unsubscribe at any time." },
+      { "heading": "4. Your content", "body": "Content you create or import is yours. We process it only to provide the service you’ve asked for, and you can export or delete it." },
+      { "heading": "5. Sharing", "body": "We share personal information only with service providers that help us run Suryca — such as hosting, email delivery and analytics — and only as needed, under contracts that require them to protect it. We may also disclose information where the law requires it, for example in response to a lawful request from a Canadian authority." },
+      { "heading": "6. Where your information is stored", "body": "Suryca is located in Canada, but some of our service providers store or process information outside Canada, including in the United States. While it’s there, it may be accessible to the courts, law enforcement and national security authorities of that country. Contact our privacy officer for more about how we handle personal information outside Canada." },
+      { "heading": "7. Retention & security", "body": "We keep personal information only as long as needed for the purposes above or as the law requires, then delete or de-identify it. We encrypt data in transit and at rest and limit access on a least-privilege basis. If a breach creates a real risk of significant harm, we’ll notify you and the relevant privacy commissioner as the law requires." },
+      { "heading": "8. Your rights", "body": "You can ask to access or correct the personal information we hold about you, ask how we’ve used or disclosed it, and withdraw your consent — subject to legal or contractual limits, and knowing that withdrawing consent may limit what we can provide. We’ll respond within the time PIPA and PIPEDA allow. If you’re not satisfied with our response, you can complain to the Office of the Information and Privacy Commissioner for British Columbia or the Office of the Privacy Commissioner of Canada." },
+      { "heading": "9. Cookies", "body": "Our website sets no advertising or tracking cookies. Our products use cookies and similar storage only to keep you signed in and remember your preferences." },
+      { "heading": "10. Children", "body": "Our website and products are not directed to children, and we don’t knowingly collect personal information from anyone under 13." },
+      { "heading": "11. Changes & contact", "body": "We’ll post material changes here and update the date above. Questions about privacy? Email privacy@suryca.com." }
+    ]
+  },
+  "Terms": {
+    "title": "Terms of Service",
+    "description": "The terms that govern your use of Suryca’s website and products.",
+    "intro": "These terms govern your use of Suryca Software Inc.’s website and products, including Fizgot, ExportAIChat and Suryca Agents. Suryca is a company based in British Columbia, Canada. By using our website or products, you agree to what’s below.",
+    "updated": "September 2026",
+    "sections": [
+      { "heading": "1. Using our products", "body": "You may use Suryca products in line with these terms and any product-specific rules. You must be old enough to form a binding contract where you live (19 in British Columbia), and you’re responsible for activity under your account." },
+      { "heading": "2. Your content & ownership", "body": "You keep ownership of the content you create or import. You grant us the limited rights needed to host and process it so we can provide the service." },
+      { "heading": "3. Acceptable use", "body": "Don’t use the products to break the law, infringe others’ rights, or disrupt the service. We may suspend or terminate accounts that do. You can stop using the products at any time." },
+      { "heading": "4. Trading & financial risk", "body": "Suryca Agents can place trades within limits you configure. Trading carries risk of loss; past performance does not guarantee future results. Suryca is a software company, not a registered dealer, adviser or investment fund manager under the securities laws of British Columbia or anywhere else. Nothing in the products is investment advice, and you remain responsible for your mandate and for complying with the laws that apply to your trading." },
+      { "heading": "5. Availability & changes", "body": "We work to keep the products available but can’t promise uninterrupted service. We may update features and these terms over time; if a change materially reduces your rights, we’ll give reasonable notice." },
+      { "heading": "6. Disclaimers & liability", "body": "The products are provided “as is” and “as available.” To the extent permitted by law, we disclaim implied warranties and conditions, and our total liability for any claim is limited to the amount you paid us in the twelve months before the claim. Some laws, including British Columbia’s consumer protection laws, don’t allow certain exclusions or limits; where that’s the case, these apply only to the extent permitted." },
+      { "heading": "7. Governing law & disputes", "body": "These terms are governed by the laws of the Province of British Columbia and the federal laws of Canada that apply there. Any dispute will be resolved in the courts of British Columbia, and you agree to their jurisdiction — unless the law where you live gives you the right to bring a claim in your local courts. The United Nations Convention on Contracts for the International Sale of Goods does not apply." },
+      { "heading": "8. Contact", "body": "These terms are the entire agreement between you and Suryca Software Inc. about the products. Questions? Email hello@suryca.com." }
+    ]
+  },
+  "NotFound": {
+    "eyebrow": "404",
+    "title": "Page not found",
+    "body": "The page you’re looking for doesn’t exist or has moved.",
+    "home": "Back to home"
+  }
+}

@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
 
 // Canonical host is suryca.com. www.suryca.com is a custom domain on the same
 // Worker (see wrangler.jsonc) and is redirected here. Two rules instead of one
@@ -15,4 +16,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
+
+export default withNextIntl(nextConfig);

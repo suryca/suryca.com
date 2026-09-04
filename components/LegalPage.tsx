@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import PageShell, { PageHeader } from "@/components/PageShell";
 
 export type LegalSection = { heading: string; body: string };
@@ -14,9 +15,10 @@ export default function LegalPage({
   /** Human-readable date the text was last revised, e.g. "September 2026". */
   updated: string;
 }) {
+  const t = useTranslations("Legal");
   return (
     <PageShell>
-      <PageHeader eyebrow="Legal" title={title} intro={intro} />
+      <PageHeader eyebrow={t("eyebrow")} title={title} intro={intro} />
       <div className="sy-wrap" style={{ padding: "32px 32px 88px", maxWidth: 820 }}>
         <p
           style={{
@@ -26,7 +28,7 @@ export default function LegalPage({
             color: "var(--sy-faint)",
           }}
         >
-          Last updated: {updated}
+          {t("lastUpdated", { date: updated })}
         </p>
         <div style={{ display: "flex", flexDirection: "column", gap: 30 }}>
           {sections.map((s) => (

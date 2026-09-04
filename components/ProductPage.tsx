@@ -1,7 +1,8 @@
+import { useTranslations } from "next-intl";
 import PageShell, { PageHeader } from "@/components/PageShell";
 import FeatureGrid, { type Feature } from "@/components/FeatureGrid";
 import CtaBlock from "@/components/CtaBlock";
-import { STATUS_STYLE, type Product } from "@/lib/site";
+import type { Product } from "@/lib/site";
 
 /**
  * Shared layout for a product detail page:
@@ -20,10 +21,11 @@ export default function ProductPage({
   cta: { title: string; body: string };
   children?: React.ReactNode;
 }) {
+  const t = useTranslations("Status");
   return (
     <PageShell active="products">
       <PageHeader
-        eyebrow={`${product.name} · ${STATUS_STYLE[product.status].label}`}
+        eyebrow={`${product.name} · ${t(product.status)}`}
         title={product.name}
         intro={intro}
       />

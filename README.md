@@ -3,6 +3,7 @@
 Marketing site for **Suryca Software Inc.**, an independent AI software studio.
 Built with Next.js (App Router), React and TypeScript. No UI framework: a small set of
 CSS variables and `sy-*` utility classes in `app/globals.css`, plus inline styles.
+Available in English (`/`) and Hindi (`/hi`) via next-intl.
 Deployed to **Cloudflare Workers** via the OpenNext adapter.
 
 ## Run locally
@@ -19,7 +20,7 @@ copy `.env.example` to `.env.local` and fill in the Resend values.
 Other commands:
 
 ```bash
-npm run lint       # ESLint (next/core-web-vitals + TypeScript rules)
+npm run lint       # ESLint, then checks messages/*.json all have the same keys
 npm run build      # next build; also the type-check
 npm run preview    # build the Cloudflare worker and run it locally with wrangler
 ```
@@ -60,20 +61,47 @@ npx opennextjs-cloudflare build
 npx wrangler dev --host www.suryca.com   # curl -I http://localhost:8787/ → 308 to https://suryca.com/
 ```
 
+## Languages
+
+Routing follows the Apple pattern: English is the default and lives at the bare path
+(`/about`), other languages get a prefix (`/hi/about`). There is no automatic redirect
+from browser settings and no cookie; visitors switch with the language links in the footer,
+and every internal link keeps them in the language they chose. `/en/...` redirects to the
+bare path. Each page declares `hreflang` alternates for search engines.
+
+- `messages/en.json` and `messages/hi.json` hold all copy, one namespace per page or
+  component. `npm run lint` fails if the key sets differ.
+- `i18n/routing.ts` lists the locales; `middleware.ts` handles the prefix; `i18n/navigation.ts`
+  exports the locale-aware `Link` that all internal links use.
+- Devanagari text is rendered with Noto Sans Devanagari, loaded only on pages that use it.
+  `html[lang="hi"]` heading overrides live at the end of `app/globals.css`.
+
+To add a language: add its code to `locales` in `i18n/routing.ts` and an Open Graph code to
+`OG_LOCALE`, copy `messages/en.json` to `messages/<code>.json` and translate it, add the
+language's own name under `Language` in every messages file, and (if it needs a different
+script) add a font in `app/[locale]/layout.tsx`. Brand and product names stay in Latin script.
+
 ## Layout
 
 ```
-app/                  Routes (App Router). One folder per page, page.tsx inside.
+app/[locale]/         Routes (App Router), one folder per page. [locale] is "en" or "hi".
+app/[locale]/[...rest] Catch-all that renders the localized not-found page.
 app/api/contact/      POST handler for the contact form (Resend template via fetch, honeypot check).
+i18n/                 next-intl routing, navigation, request config and metadata helpers.
+messages/             en.json and hi.json: every string shown on the site.
+middleware.ts         Locale prefix handling (skips /api and static files).
 emails/               HTML and plain-text source of the Resend "contact-form" template.
-components/           Shared UI: Nav, Footer, PageShell, ProductPage, FeatureGrid, …
+components/           Shared UI: Nav, Footer, LanguageSwitcher, PageShell, ProductPage, …
 components/previews/  Illustrative product mock-ups shown on the home page.
-lib/site.ts           Single source of truth for brand, products, nav, footer and contact data.
+lib/site.ts           Brand, product list (slugs, colours, status), routes, emails: no copy.
+scripts/check-messages.mjs  Key-parity check for the messages files (runs in `npm run lint`).
 wrangler.jsonc        Cloudflare Worker config (name, bindings, custom domains).
-open-next.config.ts   OpenNext adapter config.  next.config.ts: www → apex redirect.
+open-next.config.ts   OpenNext adapter config.  next.config.ts: www → apex redirect, next-intl plugin.
 ```
 
 ## Pages
+
+Every route also exists under `/hi/` in Hindi.
 
 | Route | Purpose |
 | --- | --- |
@@ -84,5 +112,7 @@ open-next.config.ts   OpenNext adapter config.  next.config.ts: www → apex red
 
 ## Content notes
 
-- Blog and news entries are static sample content in their page files.
-- The home page product previews are illustrative mock-ups, not screenshots.
+- Blog and news entries are static sample content in `messages/*.json`.
+- The home page product previews are illustrative mock-ups, not screenshots, and stay in
+  English in every language.
+- The Hindi Privacy and Terms pages say the English version governs if the two differ.
