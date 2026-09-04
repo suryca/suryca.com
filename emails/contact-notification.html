@@ -51,13 +51,12 @@
                       <a href="mailto:{{{SENDER_EMAIL}}}" style="color:#e2632a;text-decoration:none;">{{{SENDER_EMAIL}}}</a>
                     </td>
                   </tr>
-                  <tr>
-                    <td colspan="2" style="border-top:1px solid #ece3d4;padding:20px 0 0 0;">
-                      <div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8073;margin-bottom:8px;">Message</div>
-                      <div style="background:#fbf7f0;border-radius:10px;padding:16px;white-space:pre-wrap;word-break:break-word;color:#3a322a;">{{{MESSAGE}}}</div>
-                    </td>
-                  </tr>
                 </table>
+                <!-- Message sits outside the label/value table: the Resend editor drops colspan. -->
+                <div style="margin-top:20px;padding-top:20px;border-top:1px solid #ece3d4;font-family:'Hanken Grotesk',-apple-system,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5;color:#1c1712;">
+                  <div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8073;margin-bottom:8px;">Message</div>
+                  <div style="background:#fbf7f0;border-radius:10px;padding:16px;white-space:pre-wrap;word-break:break-word;color:#3a322a;">{{{MESSAGE}}}</div>
+                </div>
               </td>
             </tr>
 
