@@ -1,0 +1,16 @@
+SURYCA — CONTACT FORM
+
+New message from {{{NAME}}}
+
+Topic:  {{{TOPIC}}}
+Name:   {{{NAME}}}
+Email:  {{{SENDER_EMAIL}}}
+
+Message
+-------
+{{{MESSAGE}}}
+
+Reply to this email to answer {{{NAME}}} directly.
+
+Sent from the contact form at https://suryca.com/contact
+Suryca Software Inc. · Always on, like the sun.
