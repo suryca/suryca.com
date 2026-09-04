@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #fbf7f0; }
+  * { box-sizing: border-box; }
+  ::selection { background: rgba(226,99,42,0.22); }
+</style>
+</helmet>
+
+<div style="background:#fbf7f0; color:#1c1712; font-family:'Hanken Grotesk',-apple-system,sans-serif; min-height:100%; overflow-x:hidden; -webkit-font-smoothing:antialiased;">
+
+  <!-- NAV -->
+  <div style="position:sticky; top:0; z-index:50; background:rgba(251,247,240,0.82); backdrop-filter:blur(12px); border-bottom:1px solid rgba(28,23,18,0.07);">
+    <div style="max-width:1180px; margin:0 auto; padding:0 32px; height:68px; display:flex; align-items:center; justify-content:space-between;">
+      <div style="display:flex; align-items:center; gap:42px;">
+        <a href="Suryca.dc.html" style="display:flex; align-items:center; gap:11px; text-decoration:none;">
+          <div style="width:26px; height:26px; border-radius:50%; background:radial-gradient(circle at 32% 28%, #ffe6b0, #f2a93b 42%, #e2632a 96%); box-shadow:0 4px 16px rgba(226,99,42,0.35);"></div>
+          <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px; letter-spacing:0.16em; color:#1c1712;">SURYCA</span>
+        </a>
+        <div style="display:flex; align-items:center; gap:28px; font-size:14.5px;">
+          <a href="Suryca.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Products</a>
+          <a href="Blog.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Blog</a>
+          <a href="News.dc.html" style="color:#1c1712; font-weight:600; text-decoration:none;">News</a>
+          <a href="Contact.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Contact</a>
+        </div>
+      </div>
+      <a href="Contact.dc.html" style="display:flex; align-items:center; gap:7px; background:#1c1712; color:#fbf7f0; font-weight:600; font-size:14px; padding:9px 17px; border-radius:9px; text-decoration:none;" style-hover="background:#332a20;">
+        Get in touch <span style="font-size:15px;">&rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <div style="max-width:920px; margin:0 auto; padding:72px 32px 16px;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#e2632a; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:14px;">Newsroom</div>
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:50px; line-height:1.04; letter-spacing:-0.025em; margin:0 0 14px; color:#1c1712;">News &amp; announcements</h1>
+    <p style="font-size:18px; line-height:1.6; color:#5f574c; margin:0; max-width:560px;">Milestones, launches and updates from the studio. For press inquiries, email <a href="mailto:press@suryca.com" style="color:#e2632a; text-decoration:none;">press@suryca.com</a>.</p>
+  </div>
+
+  <!-- LIST -->
+  <div style="max-width:920px; margin:0 auto; padding:36px 32px 80px;">
+    <div style="display:flex; flex-direction:column;">
+
+      <div style="display:grid; grid-template-columns:150px 1fr auto; gap:28px; align-items:center; padding:28px 0; border-top:1px solid #ece3d4; cursor:pointer;" style-hover="background:rgba(255,255,255,0.5);">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#8a8073;">Jun 23, 2026</div>
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#e2632a; background:rgba(226,99,42,0.1); padding:3px 9px; border-radius:6px; letter-spacing:0.04em;">COMPANY</span>
+          <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:21px; margin:12px 0 6px; color:#1c1712;">Suryca incorporates as Suryca Software Inc.</h3>
+          <p style="font-size:15px; line-height:1.55; color:#5f574c; margin:0;">The studio takes its next step, formalizing as a company as it grows its team of people and agents.</p>
+        </div>
+        <span style="font-size:20px; color:#b6ab98;">&rarr;</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:150px 1fr auto; gap:28px; align-items:center; padding:28px 0; border-top:1px solid #ece3d4; cursor:pointer;" style-hover="background:rgba(255,255,255,0.5);">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#8a8073;">May 30, 2026</div>
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#b4471f; background:rgba(180,71,31,0.1); padding:3px 9px; border-radius:6px; letter-spacing:0.04em;">PRODUCT</span>
+          <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:21px; margin:12px 0 6px; color:#1c1712;">Suryca Agents enters private beta</h3>
+          <p style="font-size:15px; line-height:1.55; color:#5f574c; margin:0;">Our first financial trading agent opens to a small cohort of partners for live, risk-limited trading.</p>
+        </div>
+        <span style="font-size:20px; color:#b6ab98;">&rarr;</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:150px 1fr auto; gap:28px; align-items:center; padding:28px 0; border-top:1px solid #ece3d4; cursor:pointer;" style-hover="background:rgba(255,255,255,0.5);">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#8a8073;">Apr 12, 2026</div>
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#d99211; background:rgba(217,146,17,0.12); padding:3px 9px; border-radius:6px; letter-spacing:0.04em;">PRODUCT</span>
+          <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:21px; margin:12px 0 6px; color:#1c1712;">ExportAIChat adds Markdown &amp; public links</h3>
+          <p style="font-size:15px; line-height:1.55; color:#5f574c; margin:0;">A bigger update lands: clean Markdown export, shareable public links, and faster search.</p>
+        </div>
+        <span style="font-size:20px; color:#b6ab98;">&rarr;</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:150px 1fr auto; gap:28px; align-items:center; padding:28px 0; border-top:1px solid #ece3d4; cursor:pointer;" style-hover="background:rgba(255,255,255,0.5);">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#8a8073;">Feb 04, 2026</div>
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#e2632a; background:rgba(226,99,42,0.1); padding:3px 9px; border-radius:6px; letter-spacing:0.04em;">LAUNCH</span>
+          <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:21px; margin:12px 0 6px; color:#1c1712;">Fizgot launches to the public</h3>
+          <p style="font-size:15px; line-height:1.55; color:#5f574c; margin:0;">The studio's first product opens to everyone &mdash; turning quick ideas into shareable things in minutes.</p>
+        </div>
+        <span style="font-size:20px; color:#b6ab98;">&rarr;</span>
+      </div>
+
+      <div style="border-top:1px solid #ece3d4;"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="background:#f5eee2; border-top:1px solid #ece3d4;">
+    <div style="max-width:1180px; margin:0 auto; padding:56px 32px 40px; display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:40px;">
+      <div>
+        <a href="Suryca.dc.html" style="display:flex; align-items:center; gap:10px; margin-bottom:14px; text-decoration:none;">
+          <div style="width:22px; height:22px; border-radius:50%; background:radial-gradient(circle at 32% 28%, #ffe6b0, #f2a93b 42%, #e2632a 96%);"></div>
+          <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; letter-spacing:0.16em; color:#1c1712;">SURYCA</span>
+        </a>
+        <p style="font-size:14px; line-height:1.6; color:#7c7263; max-width:280px; margin:0;">Suryca Software Inc. An independent AI software studio. Always on, like the sun.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px;">
+        <span style="color:#1c1712; font-weight:600; margin-bottom:4px;">Products</span>
+        <a href="Fizgot.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Fizgot</a>
+        <a href="ExportAIChat.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">ExportAIChat</a>
+        <a href="Agents.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Suryca Agents</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px;">
+        <span style="color:#1c1712; font-weight:600; margin-bottom:4px;">Company</span>
+        <a href="Suryca.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">About</a>
+        <a href="Blog.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Blog</a>
+        <a href="News.dc.html" style="color:#1c1712; font-weight:600; text-decoration:none;">News</a>
+        <a href="Contact.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Contact</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px;">
+        <span style="color:#1c1712; font-weight:600; margin-bottom:4px;">Legal</span>
+        <a href="Privacy.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Privacy</a>
+        <a href="Terms.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Terms</a>
+        <a href="Security.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Security</a>
+      </div>
+    </div>
+    <div style="max-width:1180px; margin:0 auto; padding:20px 32px 48px; border-top:1px solid #e6dcc9; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:13px; color:#8a8073; font-family:'IBM Plex Mono',monospace;">
+      <span>© 2026 Suryca Software Inc.</span>
+      <span>Made with care, under the sun.</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

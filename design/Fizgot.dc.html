@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #fbf7f0; }
+  * { box-sizing: border-box; }
+  ::selection { background: rgba(226,99,42,0.22); }
+  @keyframes sy-orbit { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+</style>
+</helmet>
+
+<div style="background:#fbf7f0; color:#1c1712; font-family:'Hanken Grotesk',-apple-system,sans-serif; min-height:100%; overflow-x:hidden; -webkit-font-smoothing:antialiased;">
+
+  <!-- NAV -->
+  <div style="position:sticky; top:0; z-index:50; background:rgba(251,247,240,0.82); backdrop-filter:blur(12px); border-bottom:1px solid rgba(28,23,18,0.07);">
+    <div style="max-width:1180px; margin:0 auto; padding:0 32px; height:68px; display:flex; align-items:center; justify-content:space-between;">
+      <div style="display:flex; align-items:center; gap:42px;">
+        <a href="Suryca.dc.html" style="display:flex; align-items:center; gap:11px; text-decoration:none;">
+          <div style="width:26px; height:26px; border-radius:50%; background:radial-gradient(circle at 32% 28%, #ffe6b0, #f2a93b 42%, #e2632a 96%); box-shadow:0 4px 16px rgba(226,99,42,0.35);"></div>
+          <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px; letter-spacing:0.16em; color:#1c1712;">SURYCA</span>
+        </a>
+        <div style="display:flex; align-items:center; gap:28px; font-size:14.5px;">
+          <a href="Suryca.dc.html" style="color:#1c1712; font-weight:600; text-decoration:none;">Products</a>
+          <a href="Blog.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Blog</a>
+          <a href="News.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">News</a>
+          <a href="Contact.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Contact</a>
+        </div>
+      </div>
+      <a href="Contact.dc.html" style="display:flex; align-items:center; gap:7px; background:#1c1712; color:#fbf7f0; font-weight:600; font-size:14px; padding:9px 17px; border-radius:9px; text-decoration:none;" style-hover="background:#332a20;">
+        Get in touch <span style="font-size:15px;">&rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div style="position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; background:radial-gradient(56% 62% at 50% 0%, rgba(255,138,76,0.22), rgba(226,99,42,0.08) 48%, transparent 72%); pointer-events:none;"></div>
+    <div style="position:relative; max-width:1180px; margin:0 auto; padding:88px 32px 64px; text-align:center;">
+      <div style="width:74px; height:74px; border-radius:20px; margin:0 auto 26px; background:linear-gradient(150deg,#ff8a4c,#e2632a); box-shadow:0 16px 34px -10px rgba(226,99,42,0.55); animation:sy-orbit 5s ease-in-out infinite;"></div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#e2632a; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:16px;">A Suryca product</div>
+      <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:66px; line-height:1.0; letter-spacing:-0.03em; margin:0 auto 22px; max-width:760px; color:#1c1712; text-wrap:balance;">Fizgot</h1>
+      <p style="font-size:21px; line-height:1.5; color:#5f574c; max-width:600px; margin:0 auto 36px; text-wrap:pretty;">A playful AI creation tool for makers. Describe an idea and watch it become something real and shareable &mdash; in minutes, not afternoons.</p>
+      <div style="display:flex; align-items:center; justify-content:center; gap:14px;">
+        <a href="Contact.dc.html" style="display:flex; align-items:center; gap:8px; background:#1c1712; color:#fbf7f0; font-weight:600; font-size:16px; padding:14px 26px; border-radius:11px; text-decoration:none;" style-hover="background:#332a20;">Try Fizgot <span>&rarr;</span></a>
+        <a href="Suryca.dc.html" style="color:#1c1712; font-weight:600; font-size:16px; padding:14px 24px; border-radius:11px; border:1px solid rgba(28,23,18,0.16); text-decoration:none; background:rgba(255,255,255,0.5);" style-hover="border-color:rgba(28,23,18,0.34);">Back to all products</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREENSHOT -->
+  <div style="max-width:1000px; margin:0 auto; padding:0 32px 72px;">
+    <div style="border-radius:18px; overflow:hidden; border:1px solid #ece3d4; box-shadow:0 30px 70px -30px rgba(28,23,18,0.32); background:#fff;">
+      <div style="display:flex; align-items:center; gap:8px; padding:12px 16px; border-bottom:1px solid #f0e8da; background:#faf5ec;">
+        <span style="width:11px;height:11px;border-radius:50%;background:#e8a34a;"></span>
+        <span style="width:11px;height:11px;border-radius:50%;background:#e8d04a;"></span>
+        <span style="width:11px;height:11px;border-radius:50%;background:#d97a3f;"></span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#8a8073; margin-left:8px;">fizgot.com/new</span>
+      </div>
+      <div style="height:420px; background:repeating-linear-gradient(45deg,#f4ead9,#f4ead9 12px,#efe3cf 12px,#efe3cf 24px); display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#9a8f7d; background:rgba(255,255,255,0.7); padding:9px 16px; border-radius:8px;">Fizgot &mdash; drop product screenshot</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div style="max-width:1180px; margin:0 auto; padding:24px 32px 72px;">
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+      <div style="background:#fff; border:1px solid #ece3d4; border-radius:16px; padding:30px;">
+        <div style="font-family:'Space Grotesk',sans-serif; color:#e2632a; font-weight:700; font-size:15px; margin-bottom:14px;">01</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:21px; margin:0 0 10px; color:#1c1712;">Start from a sentence</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#5f574c; margin:0;">No blank canvas. Type what you want and Fizgot drafts a first version you can shape from there.</p>
+      </div>
+      <div style="background:#fff; border:1px solid #ece3d4; border-radius:16px; padding:30px;">
+        <div style="font-family:'Space Grotesk',sans-serif; color:#e2632a; font-weight:700; font-size:15px; margin-bottom:14px;">02</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:21px; margin:0 0 10px; color:#1c1712;">Shape it live</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#5f574c; margin:0;">Nudge, remix and refine with simple controls. Every change is instant, every step reversible.</p>
+      </div>
+      <div style="background:#fff; border:1px solid #ece3d4; border-radius:16px; padding:30px;">
+        <div style="font-family:'Space Grotesk',sans-serif; color:#e2632a; font-weight:700; font-size:15px; margin-bottom:14px;">03</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:21px; margin:0 0 10px; color:#1c1712;">Share in one click</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#5f574c; margin:0;">Publish to a link, export, or hand it off. What you make is yours to take anywhere.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="position:relative; overflow:hidden; border-top:1px solid #ece3d4;">
+    <div style="position:absolute; inset:0; background:radial-gradient(50% 130% at 50% 100%, rgba(255,138,76,0.2), rgba(226,99,42,0.1) 44%, transparent 72%); pointer-events:none;"></div>
+    <div style="position:relative; max-width:760px; margin:0 auto; padding:84px 32px; text-align:center;">
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:44px; line-height:1.06; letter-spacing:-0.025em; margin:0 0 16px; color:#1c1712;">Make your first thing today.</h2>
+      <p style="font-size:18px; line-height:1.55; color:#5f574c; max-width:480px; margin:0 auto 30px;">Fizgot is free to try. Bring an idea, leave with something real.</p>
+      <a href="Contact.dc.html" style="display:inline-flex; align-items:center; gap:8px; background:#1c1712; color:#fbf7f0; font-weight:600; font-size:16px; padding:14px 28px; border-radius:11px; text-decoration:none;" style-hover="background:#332a20;">Try Fizgot <span>&rarr;</span></a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="background:#f5eee2; border-top:1px solid #ece3d4;">
+    <div style="max-width:1180px; margin:0 auto; padding:56px 32px 40px; display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:40px;">
+      <div>
+        <a href="Suryca.dc.html" style="display:flex; align-items:center; gap:10px; margin-bottom:14px; text-decoration:none;">
+          <div style="width:22px; height:22px; border-radius:50%; background:radial-gradient(circle at 32% 28%, #ffe6b0, #f2a93b 42%, #e2632a 96%);"></div>
+          <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; letter-spacing:0.16em; color:#1c1712;">SURYCA</span>
+        </a>
+        <p style="font-size:14px; line-height:1.6; color:#7c7263; max-width:280px; margin:0;">Suryca Software Inc. An independent AI software studio. Always on, like the sun.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px;">
+        <span style="color:#1c1712; font-weight:600; margin-bottom:4px;">Products</span>
+        <a href="Fizgot.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Fizgot</a>
+        <a href="ExportAIChat.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">ExportAIChat</a>
+        <a href="Agents.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Suryca Agents</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px;">
+        <span style="color:#1c1712; font-weight:600; margin-bottom:4px;">Company</span>
+        <a href="Suryca.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">About</a>
+        <a href="Blog.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Blog</a>
+        <a href="News.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">News</a>
+        <a href="Contact.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Contact</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px;">
+        <span style="color:#1c1712; font-weight:600; margin-bottom:4px;">Legal</span>
+        <a href="Privacy.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Privacy</a>
+        <a href="Terms.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Terms</a>
+        <a href="Security.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Security</a>
+      </div>
+    </div>
+    <div style="max-width:1180px; margin:0 auto; padding:20px 32px 48px; border-top:1px solid #e6dcc9; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:13px; color:#8a8073; font-family:'IBM Plex Mono',monospace;">
+      <span>© 2026 Suryca Software Inc.</span>
+      <span>Made with care, under the sun.</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

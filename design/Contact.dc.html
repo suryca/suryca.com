@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #fbf7f0; }
+  * { box-sizing: border-box; }
+  ::selection { background: rgba(226,99,42,0.22); }
+  input, textarea { font-family:'Hanken Grotesk',sans-serif; }
+  input:focus, textarea:focus { outline:none; border-color:#e2632a !important; box-shadow:0 0 0 3px rgba(226,99,42,0.14); }
+</style>
+</helmet>
+
+<div style="background:#fbf7f0; color:#1c1712; font-family:'Hanken Grotesk',-apple-system,sans-serif; min-height:100%; overflow-x:hidden; -webkit-font-smoothing:antialiased;">
+
+  <!-- NAV -->
+  <div style="position:sticky; top:0; z-index:50; background:rgba(251,247,240,0.82); backdrop-filter:blur(12px); border-bottom:1px solid rgba(28,23,18,0.07);">
+    <div style="max-width:1180px; margin:0 auto; padding:0 32px; height:68px; display:flex; align-items:center; justify-content:space-between;">
+      <div style="display:flex; align-items:center; gap:42px;">
+        <a href="Suryca.dc.html" style="display:flex; align-items:center; gap:11px; text-decoration:none;">
+          <div style="width:26px; height:26px; border-radius:50%; background:radial-gradient(circle at 32% 28%, #ffe6b0, #f2a93b 42%, #e2632a 96%); box-shadow:0 4px 16px rgba(226,99,42,0.35);"></div>
+          <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px; letter-spacing:0.16em; color:#1c1712;">SURYCA</span>
+        </a>
+        <div style="display:flex; align-items:center; gap:28px; font-size:14.5px;">
+          <a href="Suryca.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Products</a>
+          <a href="Blog.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Blog</a>
+          <a href="News.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">News</a>
+          <a href="Contact.dc.html" style="color:#1c1712; font-weight:600; text-decoration:none;">Contact</a>
+        </div>
+      </div>
+      <a href="Contact.dc.html" style="display:flex; align-items:center; gap:7px; background:#1c1712; color:#fbf7f0; font-weight:600; font-size:14px; padding:9px 17px; border-radius:9px; text-decoration:none;" style-hover="background:#332a20;">
+        Get in touch <span style="font-size:15px;">&rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div style="max-width:1080px; margin:0 auto; padding:72px 32px 88px;">
+    <div style="display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:start;">
+
+      <!-- LEFT INFO -->
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#e2632a; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:16px;">Contact</div>
+        <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:48px; line-height:1.04; letter-spacing:-0.025em; margin:0 0 18px; color:#1c1712;">Let's talk.</h1>
+        <p style="font-size:18px; line-height:1.6; color:#5f574c; margin:0 0 40px;">Questions about a product, a partnership, or joining the studio? Send a note &mdash; it reaches a real person, usually within a day.</p>
+
+        <div style="display:flex; flex-direction:column; gap:26px;">
+          <div>
+            <div style="font-size:13px; color:#8a8073; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px;">General</div>
+            <a href="mailto:hello@suryca.com" style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:19px; color:#e2632a; text-decoration:none;">hello@suryca.com</a>
+          </div>
+          <div>
+            <div style="font-size:13px; color:#8a8073; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px;">Careers</div>
+            <a href="mailto:join@suryca.com" style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:19px; color:#e2632a; text-decoration:none;">join@suryca.com</a>
+          </div>
+          <div>
+            <div style="font-size:13px; color:#8a8073; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px;">Security</div>
+            <a href="mailto:security@suryca.com" style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:19px; color:#e2632a; text-decoration:none;">security@suryca.com</a>
+          </div>
+          <div style="padding-top:6px;">
+            <div style="font-size:13px; color:#8a8073; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px;">Studio</div>
+            <div style="font-size:16px; color:#3a322a; line-height:1.5;">Suryca Software Inc.<br>Remote-first &middot; building under the sun</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT FORM -->
+      <div style="background:#fff; border:1px solid #ece3d4; border-radius:18px; padding:36px; box-shadow:0 16px 50px -30px rgba(28,23,18,0.3);">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px;">
+          <div>
+            <label style="display:block; font-size:13.5px; font-weight:600; color:#3a322a; margin-bottom:8px;">Name</label>
+            <input type="text" placeholder="Your name" style="width:100%; padding:12px 14px; font-size:15px; color:#1c1712; background:#faf7f1; border:1px solid #e6dcc9; border-radius:10px;">
+          </div>
+          <div>
+            <label style="display:block; font-size:13.5px; font-weight:600; color:#3a322a; margin-bottom:8px;">Email</label>
+            <input type="email" placeholder="you@company.com" style="width:100%; padding:12px 14px; font-size:15px; color:#1c1712; background:#faf7f1; border:1px solid #e6dcc9; border-radius:10px;">
+          </div>
+        </div>
+        <div style="margin-bottom:18px;">
+          <label style="display:block; font-size:13.5px; font-weight:600; color:#3a322a; margin-bottom:8px;">What's this about?</label>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <span style="font-size:14px; color:#3a322a; background:#faf7f1; border:1px solid #e6dcc9; padding:8px 15px; border-radius:999px; cursor:pointer;" style-hover="border-color:#e2632a; color:#e2632a;">Product</span>
+            <span style="font-size:14px; color:#3a322a; background:#faf7f1; border:1px solid #e6dcc9; padding:8px 15px; border-radius:999px; cursor:pointer;" style-hover="border-color:#e2632a; color:#e2632a;">Partnership</span>
+            <span style="font-size:14px; color:#3a322a; background:#faf7f1; border:1px solid #e6dcc9; padding:8px 15px; border-radius:999px; cursor:pointer;" style-hover="border-color:#e2632a; color:#e2632a;">Careers</span>
+            <span style="font-size:14px; color:#3a322a; background:#faf7f1; border:1px solid #e6dcc9; padding:8px 15px; border-radius:999px; cursor:pointer;" style-hover="border-color:#e2632a; color:#e2632a;">Press</span>
+            <span style="font-size:14px; color:#3a322a; background:#faf7f1; border:1px solid #e6dcc9; padding:8px 15px; border-radius:999px; cursor:pointer;" style-hover="border-color:#e2632a; color:#e2632a;">Other</span>
+          </div>
+        </div>
+        <div style="margin-bottom:24px;">
+          <label style="display:block; font-size:13.5px; font-weight:600; color:#3a322a; margin-bottom:8px;">Message</label>
+          <textarea rows="5" placeholder="Tell us a little about what you need…" style="width:100%; padding:12px 14px; font-size:15px; color:#1c1712; background:#faf7f1; border:1px solid #e6dcc9; border-radius:10px; resize:vertical;"></textarea>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <span style="font-size:13px; color:#8a8073;">We'll never share your details.</span>
+          <div style="display:inline-flex; align-items:center; gap:8px; background:#1c1712; color:#fbf7f0; font-weight:600; font-size:15px; padding:13px 26px; border-radius:11px; cursor:pointer;" style-hover="background:#332a20;">Send message <span>&rarr;</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="background:#f5eee2; border-top:1px solid #ece3d4;">
+    <div style="max-width:1180px; margin:0 auto; padding:56px 32px 40px; display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:40px;">
+      <div>
+        <a href="Suryca.dc.html" style="display:flex; align-items:center; gap:10px; margin-bottom:14px; text-decoration:none;">
+          <div style="width:22px; height:22px; border-radius:50%; background:radial-gradient(circle at 32% 28%, #ffe6b0, #f2a93b 42%, #e2632a 96%);"></div>
+          <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; letter-spacing:0.16em; color:#1c1712;">SURYCA</span>
+        </a>
+        <p style="font-size:14px; line-height:1.6; color:#7c7263; max-width:280px; margin:0;">Suryca Software Inc. An independent AI software studio. Always on, like the sun.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px;">
+        <span style="color:#1c1712; font-weight:600; margin-bottom:4px;">Products</span>
+        <a href="Fizgot.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Fizgot</a>
+        <a href="ExportAIChat.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">ExportAIChat</a>
+        <a href="Agents.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Suryca Agents</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px;">
+        <span style="color:#1c1712; font-weight:600; margin-bottom:4px;">Company</span>
+        <a href="Suryca.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">About</a>
+        <a href="Blog.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Blog</a>
+        <a href="News.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">News</a>
+        <a href="Contact.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Contact</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px;">
+        <span style="color:#1c1712; font-weight:600; margin-bottom:4px;">Legal</span>
+        <a href="Privacy.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Privacy</a>
+        <a href="Terms.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Terms</a>
+        <a href="Security.dc.html" style="color:#5f574c; text-decoration:none;" style-hover="color:#1c1712;">Security</a>
+      </div>
+    </div>
+    <div style="max-width:1180px; margin:0 auto; padding:20px 32px 48px; border-top:1px solid #e6dcc9; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:13px; color:#8a8073; font-family:'IBM Plex Mono',monospace;">
+      <span>© 2026 Suryca Software Inc.</span>
+      <span>Made with care, under the sun.</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
