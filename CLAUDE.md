@@ -49,6 +49,10 @@ There is no test suite.
 - `app/api/contact/route.ts` validates the form, drops honeypot hits, and sends via the
   Resend REST API with plain `fetch` (no SDK). Env: `RESEND_API_KEY` (secret),
   `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`. Missing config logs in dev, returns 503 in prod.
+- The email body is the published Resend template with alias `contact-form` (variables
+  `NAME`, `TOPIC`, `SENDER_EMAIL`, `MESSAGE`). Resend inserts variables as raw HTML, so the
+  route escapes them. `emails/contact-notification.html` is the copy that was imported into
+  the editor; edit the template in the Resend dashboard and keep that file in sync.
 
 ## Conventions
 

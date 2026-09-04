@@ -37,7 +37,10 @@ dashboard (Workers & Pages → Create → Import a repository → `suryca/suryca
 
 Then add the secret **`RESEND_API_KEY`** under Settings → Variables and Secrets so the
 contact form can send email. `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` are set in
-`wrangler.jsonc`; the from-address must be on a domain verified in Resend.
+`wrangler.jsonc`; the from-address must be on a domain verified in Resend. The message
+body comes from the published Resend template with alias `contact-form`, which must
+declare the variables `NAME`, `TOPIC`, `SENDER_EMAIL` and `MESSAGE`. The HTML that was
+imported into the template editor lives in `emails/contact-notification.html`.
 
 To deploy from your machine instead: `npx wrangler login` once, then `npm run deploy`.
 
@@ -60,7 +63,8 @@ npx wrangler dev --host www.suryca.com   # curl -I http://localhost:8787/ → 30
 
 ```
 app/                  Routes (App Router). One folder per page, page.tsx inside.
-app/api/contact/      POST handler for the contact form (Resend via fetch, honeypot check).
+app/api/contact/      POST handler for the contact form (Resend template via fetch, honeypot check).
+emails/               HTML source of the Resend "contact-form" template.
 components/           Shared UI: Nav, Footer, PageShell, ProductPage, FeatureGrid, …
 components/previews/  Illustrative product mock-ups shown on the home page.
 lib/site.ts           Single source of truth for brand, products, nav, footer and contact data.

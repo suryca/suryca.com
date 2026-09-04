@@ -6,6 +6,13 @@ export const dynamic = "force-dynamic";
 const LIMITS = { name: 120, email: 254, message: 5000 } as const;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+/**
+ * Published Resend template (alias). Declares the variables NAME, TOPIC,
+ * SENDER_EMAIL and MESSAGE with no fallbacks and no default from/subject, so
+ * every send must supply all of them. Source copy: emails/contact-notification.html.
+ */
+const TEMPLATE_ALIAS = "contact-form";
+
 type Submission = {
   name: string;
   email: string;
@@ -15,6 +22,18 @@ type Submission = {
 
 function fail(error: string, status = 400) {
   return NextResponse.json({ ok: false, error }, { status });
+}
+
+/**
+ * Resend substitutes {{{VAR}}} verbatim into the template HTML (verified by a
+ * test send), so user input must be escaped or it becomes markup.
+ */
+function escapeHtml(s: string): string {
+  return s
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
 }
 
 function parse(body: unknown): { data?: Submission; error?: string; spam?: boolean } {
@@ -53,14 +72,6 @@ async function sendViaResend(data: Submission): Promise<{ ok: true } | { ok: fal
     return { ok: false, error: "Contact form is not configured." };
   }
 
-  const text = [
-    `Name:  ${data.name}`,
-    `Email: ${data.email}`,
-    `Topic: ${data.topic}`,
-    "",
-    data.message,
-  ].join("\n");
-
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
@@ -69,7 +80,15 @@ async function sendViaResend(data: Submission): Promise<{ ok: true } | { ok: fal
       to: [to],
       reply_to: data.email,
       subject: `[suryca.com] ${data.topic} — ${data.name}`,
-      text,
+      template: {
+        id: TEMPLATE_ALIAS,
+        variables: {
+          NAME: escapeHtml(data.name),
+          TOPIC: escapeHtml(data.topic),
+          SENDER_EMAIL: escapeHtml(data.email),
+          MESSAGE: escapeHtml(data.message),
+        },
+      },
     }),
   });
 
