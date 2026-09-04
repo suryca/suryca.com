@@ -11,7 +11,17 @@
   },
   // Lets the worker call itself (used by OpenNext for revalidation/cache work).
   "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "suryca-com" }],
-  "observability": { "enabled": true },
+  // Workers Logs. Kept in sync with the dashboard (Settings > Observability).
+  "observability": {
+    "logs": { "enabled": true, "invocation_logs": true },
+    "traces": { "enabled": false }
+  },
+  // Custom domains. Cloudflare creates the DNS records and certificates on deploy.
+  // www.suryca.com is redirected to suryca.com by next.config.ts.
+  "routes": [
+    { "pattern": "suryca.com", "custom_domain": true },
+    { "pattern": "www.suryca.com", "custom_domain": true }
+  ],
   // Non-secret config. RESEND_API_KEY is a secret: set it in the dashboard
   // (Settings → Variables and Secrets) or with `npx wrangler secret put RESEND_API_KEY`.
   "vars": {

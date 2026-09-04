@@ -41,6 +41,21 @@ contact form can send email. `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` are set
 
 To deploy from your machine instead: `npx wrangler login` once, then `npm run deploy`.
 
+### Domains
+
+`wrangler.jsonc` lists `suryca.com` and `www.suryca.com` as custom domains (`routes` with
+`custom_domain: true`). Wrangler creates the DNS records and certificates on deploy, so the
+`suryca.com` zone must live in the same Cloudflare account as the worker. `www.suryca.com`
+is redirected to `suryca.com` by the `redirects()` in `next.config.ts`.
+
+To try the redirect locally, build the worker and start wrangler with a host override
+(plain `wrangler dev` rewrites the `Host` header to the first route in `wrangler.jsonc`):
+
+```bash
+npx opennextjs-cloudflare build
+npx wrangler dev --host www.suryca.com   # curl -I http://localhost:8787/ → 308 to https://suryca.com/
+```
+
 ## Layout
 
 ```
@@ -50,7 +65,8 @@ components/           Shared UI: Nav, Footer, PageShell, ProductPage, FeatureGri
 components/previews/  Illustrative product mock-ups shown on the home page.
 lib/site.ts           Single source of truth for brand, products, nav, footer and contact data.
 design/               Original design mockups (reference only, not part of the build).
-wrangler.jsonc        Cloudflare Worker config.  open-next.config.ts: OpenNext adapter config.
+wrangler.jsonc        Cloudflare Worker config (name, bindings, custom domains).
+open-next.config.ts   OpenNext adapter config.  next.config.ts: www → apex redirect.
 ```
 
 ## Pages

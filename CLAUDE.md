@@ -74,6 +74,13 @@ There is no test suite.
   Keep pages statically prerendered (no `dynamic = "force-dynamic"` on pages, no ISR) so
   the worker stays small and only `/api/contact` executes on request.
 - Secrets go in the dashboard or `npx wrangler secret put`; never in `wrangler.jsonc`.
+- Custom domains are the `routes` entries in `wrangler.jsonc` (`suryca.com` and
+  `www.suryca.com`, `custom_domain: true`). Deploying creates their DNS records and certs.
+- `www.suryca.com` redirects to `suryca.com` via `redirects()` in `next.config.ts`. Keep the
+  two rules (`/` and `/:path+`): with a single `/:path*` rule OpenNext leaves the pattern
+  unexpanded for the root path and redirects to a literal `/:path*`.
+- `wrangler dev` rewrites the `Host` header to the first route's host, so test the www
+  redirect with `npx wrangler dev --host www.suryca.com` after an OpenNext build.
 - `.open-next/` and `.wrangler/` are build output and are git-ignored.
 
 ## Content notes
