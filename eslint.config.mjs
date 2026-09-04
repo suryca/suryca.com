@@ -15,7 +15,6 @@ const eslintConfig = [
       ".open-next/**",
       "out/**",
       "node_modules/**",
-      "design/**",
       "next-env.d.ts",
       "cloudflare-env.d.ts",
     ],

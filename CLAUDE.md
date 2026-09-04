@@ -13,7 +13,7 @@ for the contact form. Hosted on Cloudflare Workers (free plan) through OpenNext.
 - Next.js 15 (App Router) + React 19 + TypeScript, strict mode.
 - No CSS framework. Design tokens live as CSS variables in `app/globals.css` (`--sy-*`),
   with a handful of `sy-*` utility classes (buttons, nav, forms, responsive grids).
-  Everything else is inline `style={{ }}` on JSX, matching the original design export.
+  Everything else is inline `style={{ }}` on JSX, matching the original design.
 - Fonts via `next/font/google`: Space Grotesk (display), Hanken Grotesk (body),
   IBM Plex Mono (mono). Use `var(--font-display|body|mono)`, never hard-code family names.
 - Path alias `@/` maps to the repo root (`@/components/...`, `@/lib/...`).
@@ -49,9 +49,6 @@ There is no test suite.
 - `app/api/contact/route.ts` validates the form, drops honeypot hits, and sends via the
   Resend REST API with plain `fetch` (no SDK). Env: `RESEND_API_KEY` (secret),
   `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`. Missing config logs in dev, returns 503 in prod.
-- `design/` holds the original mockups (`*.dc.html` + `support.js`, plus a self-contained
-  `suryca-standalone.html`). Open them in a browser for visual reference. They are not
-  imported by the app and must not be bundled.
 
 ## Conventions
 

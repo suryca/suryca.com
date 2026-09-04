@@ -64,7 +64,6 @@ app/api/contact/      POST handler for the contact form (Resend via fetch, honey
 components/           Shared UI: Nav, Footer, PageShell, ProductPage, FeatureGrid, …
 components/previews/  Illustrative product mock-ups shown on the home page.
 lib/site.ts           Single source of truth for brand, products, nav, footer and contact data.
-design/               Original design mockups (reference only, not part of the build).
 wrangler.jsonc        Cloudflare Worker config (name, bindings, custom domains).
 open-next.config.ts   OpenNext adapter config.  next.config.ts: www → apex redirect.
 ```
